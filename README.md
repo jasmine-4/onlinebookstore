@@ -17,6 +17,7 @@ Administrators — manage books, inventory, pricing, and sales information.
 The project demonstrates practical implementation of Java Servlets, JDBC, MVC-style web application development, database connectivity, session management, and CRUD operations.
 
 ✨ Key Features
+
 👤 Customer Features
 
 User registration and login
@@ -34,6 +35,8 @@ Purchase books
 Generate payment receipts
 
 View purchase-related information
+
+
 
 🔐 Administrator Features
 

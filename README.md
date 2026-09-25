@@ -1,140 +1,318 @@
-- A Java Web Developement Project
-<!--Check out the Live website demo: [https://theonlinebookstore.herokuapp.com](https://theonlinebookstore.herokuapp.com)-->
-- User Login Credentials: (jasmine/jasmine)
-- Admin Login Credentials: (Admin/Admin)
-<hr>
+📚 Online Bookstore
 
-### About
+A full-stack Java web application for managing an online bookstore, including user registration, authentication, book browsing, shopping cart management, purchasing, payment receipts, and an administrative dashboard for inventory management.
 
-A user-friendly Online Bookstore project in which users can log in or register, view the available books, select books along with their quantity, and buy them. Users can also get payment receipts after successful payment. The project can also be used by the administrator, who can add new books, remove books, increase and decrease the quantity of books, change the price of the books as well as maintain the selling history of books.
+Java Web Development Project — built with Java Servlets, JDBC, MySQL, HTML, CSS, JavaScript, and Bootstrap.
 
-!![onlinebookstore](WebContent/bookstore.jpeg)
+🚀 Project Overview
 
-<span style="color:blue">**This Website is built for following purpose:-**</span>
-- For Selling books online.
-- Maintaining books selling history.
-- Adding and managing books.
-- User Friendly.
-- For Implementation of Http Servlets in Java.
-- This is a Mini-project developed using Java, Jdbc, And Servlets.
+The Online Bookstore is a web-based e-commerce application designed to provide a simple and user-friendly platform for purchasing books online.
 
-<span style="color:blue">**Admin Have Following Access for this online store site:-**</span>
-- Add New Books.
-- View Books Available.
-- Remove Books.
-- Increase Books Amount.
+The application supports two types of users:
 
-<span style="color:blue">**Users Have Following Access for this online store site:-**</span>
-- Create New Account or Register.
-- Login.
-- View Available Books.
-- Select Books to Buy.
-- Select Books Quantity.
-- Buy Books.
-- Get Payment Receipt.
+Customers — browse books, select quantities, purchase books, and receive payment receipts.
 
-### Technologies used:-
-1. Front-End Development:
-- HTML
-- CSS
-- Javascript
-- BootStrap
+Administrators — manage books, inventory, pricing, and sales information.
 
-2. Back-End Development:
-- Java [JDK 8+]
-- JDBC
-- Servlet
+The project demonstrates practical implementation of Java Servlets, JDBC, MVC-style web application development, database connectivity, session management, and CRUD operations.
 
-3. Database:
-- MySql
+✨ Key Features
+👤 Customer Features
 
-### ================ Software And Tools Required ================
-- : Git [https://www.youtube.com/watch?v=gv7VPQ4LZ7g]
-- : Java JDK 8+ [https://www.youtube.com/watch?v=O9PWH9SeTTE]
-- : Eclipse EE (Enterprise Edition) [https://www.youtube.com/watch?v=8aDsEV7txXE]
-- : Apache Maven [https://www.youtube.com/watch?v=jd2zx3dLjuw]
-- : Tomcat v8.0+ [https://youtu.be/mLFPodZO8Iw?t=903]
-- : MySQL Server [https://www.youtube.com/watch?v=Ydh5jYA6Frs]
-- : MySQL Workbench (optional) [https://www.youtube.com/watch?v=t79oCeTXHwg]
+User registration and login
 
-### ================= Dummy Database Initialization =================
+Browse available books
 
-STEP 1: Open MySQL Command Prompt or MySQL Workbench
+View book details and prices
 
-STEP 2: Login to the administrator user as : ```mysql -u <username> -p``` (Enter Password if asked)
+Select books and quantities
 
-STEP 3: Copy paste the following MySql Commands-
-```MySQL
-create database if not exists onlinebookstore;
+Add books to the shopping cart
 
-use onlinebookstore;
+Purchase books
 
-create table if not exists books(barcode varchar(100) primary key, name varchar(100), author varchar(100), price int, quantity int);
+Generate payment receipts
 
-create table if not exists users(username varchar(100) primary key,password varchar(100), firstname varchar(100),
-    lastname varchar(100),address text, phone varchar(100),mailid varchar(100),usertype int);
+View purchase-related information
 
-insert into books values('9780134190563','The Go Programming Language','Alan A. A. Donovan and Brian W. Kernighan',400,8);
-insert into books values('9780133053036','C++ Primer','Stanley Lippman and Josée Lajoie and Barbara Moo',976,13);
-insert into books values('9781718500457','The Rust Programming Language','Steve Klabnik and Carol Nichols',560,12);
-insert into books values('9781491910740','Head First Java','Kathy Sierra and Bert Bates and Trisha Gee',754,23);
-insert into books values('9781492056300','Fluent Python','Luciano Ramalho',1014,5);
-insert into books values('9781720043997','The Road to Learn React','Robin Wieruch',239,18);
-insert into books values('9780132350884','Clean Code: A Handbook of Agile Software Craftsmanship','Robert C Martin',288,3);
-insert into books values('9780132181273','Domain-Driven Design','Eric Evans',560,28);
-insert into books values('9781951204006','A Programmers Guide to Computer Science','William Springer',188,4);
-insert into books values('9780316204552','The Soul of a New Machine','Tracy Kidder',293,30);
-insert into books values('9780132778046','Effective Java','Joshua Bloch',368,21);
-insert into books values('9781484255995','Practical Rust Projects','Shing Lyu',257,15);
-insert into users values('demo','demo','Demo','User','Demo Home','42502216225','demo@gmail.com',2);
-insert into users values('Admin','Admin','Mr.','Admin','Haldia WB','9584552224521','admin@gmail.com',1);
-insert into users values('jasmine','jasmine','Jasmine','Raj','Bihar','1236547089','jasmine.mohal12@gmail.com',2);
+🔐 Administrator Features
 
-commit;
+Secure administrator login
 
-```
+Add new books
 
-### ========== Importing and Running The Project Through Eclipse EE ==========
+View available books
 
-Step 0: Open Eclipse Enterprise Edition. [Install, if not already installed.]
+Remove books
 
-Step 1: Click On File > Import > Git > Projects From Git > Clone Uri > Paste The Repository Url as: ```https://github.com/jasmine/onlinebookstore.git```> Select master Branch > Next > Next > Finish.
+Increase or decrease inventory
 
-Step 2. a: Go inside ```src/main/resources > application.properties``` and update the value of database details as per your usage, like db.driver, db.host, db.username and db.password according to your installed mysql/postgresql admin user credentials.
+Update book prices
 
-Step 2.b: Right Click on Project > Run as > Maven Build > In the goals field enter "clean install" > apply > run
+Manage book availability
 
-Step 2.c: Right Click On Project > Build Path > Configure Build Path > Libraries > Remove and Update Any Libraries if Red Mark Exists > Finish.
+Maintain selling history
 
-Step 3: [Only If Tomcat Server is not configured in Eclipse] : Right Click On Project > Run As > Run On Server > Select Tomcat V8.0 > (Select Tomcat V8.0 Installation Location If Asked) Next > Add onlinebookstore > Finish.
+🛠️ Technology Stack
+Layer	Technologies
+Frontend	HTML, CSS, JavaScript, Bootstrap
+Backend	Java, Java Servlets, JDBC
+Database	MySQL
+Build Tool	Apache Maven
+Application Server	Apache Tomcat
+IDE	Eclipse Enterprise Edition
+Version Control	Git & GitHub
+🏗️ Application Architecture
 
-Step 4: In The Server Tab > Double Click On Tomcat Server > Ports > Change The Port Number For Http/1.1 To 8083 > Close And Save.
+The application follows a layered web-application approach:
 
-Step 5: Right Click On Project > Run As > Run On Server > Select Tomcat v8.0 > Next > Add All> Done.
+User
+  │
+  ▼
+HTML / CSS / JavaScript / Bootstrap
+  │
+  ▼
+Java Servlets
+  │
+  ▼
+JDBC
+  │
+  ▼
+MySQL Database
 
-Step 6: Check Running The Site At  <a href="http://localhost:8083/onlinebookstore/">http://localhost:8083/onlinebookstore/</a>
+Main Components
 
-Step 7: Default Username And Password For Admin Is "Admin" And "Admin"
+Presentation Layer — HTML, CSS, JavaScript, and Bootstrap
 
-Step 8: The default Username And Password For User Is "jasmine" And "jasmine"
+Controller Layer — Java Servlets handling HTTP requests
 
-## FAQ
-**Question:1** Unable to Connect to Database?
+Data Access Layer — JDBC for database operations
 
-**Answer:** Please check you have installed the mysql correctly and have updated the correct db details in application.properties file. Also you can try doing maven clean install and force update the project and restart.
-<hr>
+Database Layer — MySQL for users, books, inventory, and related data
 
-Note:- Considering this as a Sample Project, we have not much considered of web security.
-#### Some Screenshots for the project:
-<img width="941" alt="image" src="https://user-images.githubusercontent.com/34605595/224769637-37c34d4b-26e7-4d49-b990-4c09b260ec31.png">
-<img width="954" alt="image" src="https://user-images.githubusercontent.com/34605595/224769990-f440f74d-41b2-4629-ba1c-a87267f225d9.png">
-<img width="930" alt="image" src="https://user-images.githubusercontent.com/34605595/224770145-5902054f-5943-44ac-b02f-92097c8a6972.png">
-<img width="934" alt="image" src="https://user-images.githubusercontent.com/34605595/224770257-e18a3810-0457-4b78-bf46-cf82746708ee.png">
-<img width="946" alt="image" src="https://user-images.githubusercontent.com/34605595/224770392-5a5478d2-98cc-44ee-8689-132b6b16af80.png">
+🗄️ Database
+
+The application uses MySQL with tables for:
+
+Users
+
+Books
+
+Inventory
+
+User roles
+
+Example book data includes:
+
+Book barcode/ISBN
+
+Book name
+
+Author
+
+Price
+
+Available quantity
+
+📸 Screenshots
+Online Bookstore
+
+Book Management
+
+<!-- Add additional screenshots here as your updated UI screenshots become available. -->
+⚙️ Running the Project Locally
+Prerequisites
+
+Install the following:
+
+Java JDK 8 or higher
+
+Eclipse Enterprise Edition
+
+Apache Maven
+
+Apache Tomcat 8.0+
+
+MySQL Server
+
+MySQL Workbench (optional)
+
+Git
+
+1. Clone the Repository
+git clone https://github.com/jasmine-4/onlinebookstore.git
+cd onlinebookstore
+
+2. Configure the Database
+
+Create the database:
+
+CREATE DATABASE onlinebookstore;
+USE onlinebookstore;
 
 
-#### "Suggestions and project improvement ideas are welcomed!"
+Create the required tables and insert the sample data using the SQL script provided in the project.
 
-<bold>Thanks a lot,</bold><br/>
-                                                                                                        Project Leader<br/>
-                                                                                                         <b>Jasmine Mohal</b>
+3. Configure Database Connection
+
+Open:
+
+src/main/resources/application.properties
+
+
+Update the database configuration with your local MySQL credentials.
+
+Example:
+
+db.username=YOUR_USERNAME
+db.password=YOUR_PASSWORD
+
+
+Do not commit real database passwords or other credentials to GitHub.
+
+4. Build the Project
+
+Run:
+
+mvn clean install
+
+5. Deploy to Tomcat
+
+Deploy the generated application to Apache Tomcat and start the server.
+
+The application can then be accessed locally at:
+
+http://localhost:8083/onlinebookstore/
+
+
+The port may differ depending on your local Tomcat configuration.
+
+🔑 Demo Accounts
+
+For local/demo purposes, sample accounts can be created using the database initialization script.
+
+Customer
+
+Username: jasmine
+Password: jasmine
+
+
+Administrator
+
+Username: Admin
+Password: Admin
+
+
+These credentials are intended only for the sample project. For a production application, passwords should never be stored or shared in plain text.
+
+📂 Project Structure
+onlinebookstore/
+│
+├── src/
+│   └── main/
+│       ├── java/
+│       │   └── ...
+│       └── resources/
+│           └── application.properties
+│
+├── WebContent/
+│   ├── bookstore.jpeg
+│   ├── books.jpg
+│   └── ...
+│
+├── pom.xml
+└── README.md
+
+🔒 Security Note
+
+This project was developed as a learning/mini-project and does not implement all security practices required for production applications.
+
+Potential production improvements include:
+
+Password hashing
+
+Secure session management
+
+Input validation
+
+CSRF protection
+
+Authentication/authorization improvements
+
+Secure database configuration
+
+HTTPS
+
+Environment-based secrets management
+
+🔮 Future Improvements
+
+Potential enhancements include:
+
+Online payment gateway integration
+
+Book search and filtering
+
+Book categories
+
+User order history
+
+Wishlist functionality
+
+Email notifications
+
+Password reset functionality
+
+REST API integration
+
+Improved authentication and authorization
+
+Responsive UI improvements
+
+Automated testing
+
+Docker-based deployment
+
+Cloud deployment
+
+🎯 Skills Demonstrated
+
+This project demonstrates practical experience with:
+
+Java web development
+
+Java Servlets
+
+JDBC
+
+MySQL database design
+
+CRUD operations
+
+HTTP request/response handling
+
+User authentication
+
+Session management
+
+Role-based application functionality
+
+MVC-style application development
+
+HTML/CSS/JavaScript
+
+Bootstrap
+
+Maven
+
+Apache Tomcat
+
+Git/GitHub
+
+👩‍💻 Author
+
+Jasmine Mohal
+
+Java Developer | Web Development | Backend Development
+
+⭐ If you found this project useful, feel free to explore the repository and provide feedback.

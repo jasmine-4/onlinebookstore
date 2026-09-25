@@ -1,200 +1,754 @@
-<html>
-<head>
-<meta charset="ISO-8859-1">
-<title>Book Store</title>
+<!DOCTYPE html> <html lang="en"> <head> <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Login | Online Book Store</title>
+
 <link rel="apple-touch-icon" sizes="180x180"
-	href="./favicons/apple-touch-icon.png">
+    href="./favicons/apple-touch-icon.png">
+
 <link rel="icon" type="image/png" sizes="32x32"
-	href="./favicons/favicon-32x32.png">
+    href="./favicons/favicon-32x32.png">
+
 <link rel="icon" type="image/png" sizes="16x16"
-	href="./favicons/favicon-16x16.png">
+    href="./favicons/favicon-16x16.png">
+
 <link rel="manifest" href="./favicons/site.webmanifest">
+
 <link rel="stylesheet"
-	href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css">
+    
+href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css">
+
 <link rel="stylesheet" href="styles.css">
+
 <style>
-/* COMPACT CAPTCHA YELLOW */
-.capbox {
-	background: #ccc2a7;
-	background: linear-gradient(to right, #ccc2a7, #8f8874);
-	border: #5c574b 0px solid;
-	border-width: 2px 2px 2px 20px;
-	box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	-webkit-box-sizing: border-box;
-	display: inline-block;
-	padding: 5px 8px 5px 8px;
-	border-radius: 4px 4px 4px 4px;
-}
 
-.capbox-inner {
-	font: bold 12px arial, sans-serif;
-	color: #000000;
-	background: rgba(255, 255, 255, 0.30);
-	/* SEMI TRANSPARENT BACKGROUND */
-	margin: 0px auto 0px auto;
-	padding: 3px 8px 5px 10px;
-	border-radius: 4px;
-	display: inline-block;
-	vertical-align: middle;
-}
+    /* =========================
+       Login Page
+    ========================= */
 
-#CaptchaDiv {
-	color: #000000;
-	font: normal 25px Impact, Charcoal, arial, sans-serif;
-	font-style: italic;
-	text-align: center;
-	vertical-align: middle;
-	background-color: #FFFFFF;
-	user-select: none;
-	display: inline-block;
-	padding: 3px 14px 3px 8px;
-	margin-right: 4px;
-	border-radius: 4px;
-}
+    .login-page {
+        min-height: calc(100vh - 74px);
 
-#CaptchaInput {
-	border: black 2px solid;
-	margin: 3px 0px 1px 0px;
-	width: 105px;
-}
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
-input {
-	padding: 2px 2px;
-	margin: 2px 0;
-	box-sizing: border-box;
-	border-radius: 10px;
-}
+        padding: 60px 7%;
+    }
+
+    .login-container {
+        width: min(1100px, 100%);
+
+        display: grid;
+        grid-template-columns: 1fr 430px;
+
+        align-items: center;
+        gap: 80px;
+    }
+
+
+    /* =========================
+       Left Side
+    ========================= */
+
+    .login-intro {
+        color: white;
+
+        padding: 20px;
+    }
+
+    .login-eyebrow {
+        display: inline-block;
+
+        font-size: 12px;
+        font-weight: 700;
+
+        letter-spacing: 4px;
+
+        color: rgba(255, 255, 255, 0.85);
+
+        margin-bottom: 20px;
+    }
+
+    .login-intro h1 {
+        font-size: clamp(48px, 6vw, 76px);
+
+        line-height: 1.02;
+
+        font-weight: 800;
+
+        letter-spacing: -3px;
+
+        margin-bottom: 25px;
+
+        text-shadow:
+            0 4px 18px rgba(0, 0, 0, 0.5),
+            0 10px 35px rgba(0, 0, 0, 0.35);
+    }
+
+    .login-intro h1 span {
+        color: #f6d58a;
+    }
+
+    .login-description {
+        max-width: 470px;
+
+        font-size: 18px;
+
+        line-height: 1.7;
+
+        color: rgba(255, 255, 255, 0.88);
+
+        margin-bottom: 30px;
+    }
+
+    .book-decoration {
+        width: 70px;
+        height: 4px;
+
+        background: #f6d58a;
+
+        border-radius: 20px;
+
+        box-shadow: 0 3px 12px rgba(0, 0, 0, 0.3);
+    }
+
+
+    /* =========================
+       Login Card
+    ========================= */
+
+    .login-card {
+        width: 100%;
+
+        padding: 42px 40px;
+
+        background: rgba(255, 255, 255, 0.94);
+
+        border: 1px solid rgba(255, 255, 255, 0.7);
+
+        border-radius: 26px;
+
+        box-shadow:
+            0 25px 70px rgba(0, 0, 0, 0.38),
+            0 5px 20px rgba(0, 0, 0, 0.15);
+
+        color: #202020;
+    }
+
+    .login-card-header {
+        margin-bottom: 30px;
+    }
+
+    .login-card-header h2 {
+        font-size: 32px;
+
+        font-weight: 750;
+
+        color: #171717;
+
+        margin-bottom: 7px;
+    }
+
+    .login-card-header p {
+        color: #777;
+
+        font-size: 14px;
+
+        margin: 0;
+    }
+
+
+    /* =========================
+       Form
+    ========================= */
+
+    .login-form {
+        width: 100%;
+    }
+
+    .form-group-custom {
+        margin-bottom: 20px;
+    }
+
+    .form-group-custom label {
+        display: block;
+
+        font-size: 13px;
+
+        font-weight: 700;
+
+        color: #333;
+
+        margin-bottom: 8px;
+    }
+
+    .form-control-custom {
+        width: 100%;
+
+        height: 50px;
+
+        padding: 0 16px;
+
+        border: 1px solid #dddddd;
+
+        border-radius: 12px;
+
+        background: #f8f8f8;
+
+        color: #222;
+
+        font-size: 15px;
+
+        outline: none;
+
+        transition:
+            border-color 0.25s ease,
+            box-shadow 0.25s ease,
+            background 0.25s ease;
+    }
+
+    .form-control-custom:focus {
+        background: #ffffff;
+
+        border-color: #b89b5e;
+
+        box-shadow: 0 0 0 3px rgba(184, 155, 94, 0.14);
+    }
+
+
+    /* =========================
+       CAPTCHA
+    ========================= */
+
+    .captcha-label {
+        display: block;
+
+        font-size: 13px;
+
+        font-weight: 700;
+
+        color: #333;
+
+        margin-bottom: 8px;
+    }
+
+    .captcha-row {
+        display: flex;
+
+        align-items: center;
+
+        gap: 8px;
+    }
+
+    #CaptchaDiv {
+        height: 48px;
+
+        min-width: 110px;
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+        padding: 0 14px;
+
+        border-radius: 11px;
+
+        background:
+            repeating-linear-gradient(
+                -45deg,
+                #ece7dc,
+                #ece7dc 5px,
+                #ddd6c8 5px,
+                #ddd6c8 10px
+            );
+
+        border: 1px solid #d2cab9;
+
+        color: #34302a;
+
+        font: italic bold 24px Georgia, serif;
+
+        letter-spacing: 4px;
+
+        user-select: none;
+    }
+
+    #CaptchaInput {
+        height: 48px;
+
+        flex: 1;
+
+        min-width: 0;
+
+        padding: 0 13px;
+
+        border: 1px solid #dddddd;
+
+        border-radius: 11px;
+
+        background: #f8f8f8;
+
+        font-size: 14px;
+
+        outline: none;
+    }
+
+    #CaptchaInput:focus {
+        background: #ffffff;
+
+        border-color: #b89b5e;
+
+        box-shadow: 0 0 0 3px rgba(184, 155, 94, 0.14);
+    }
+
+
+    /* =========================
+       Login Button
+    ========================= */
+
+    .login-button {
+        width: 100%;
+
+        height: 52px;
+
+        margin-top: 8px;
+
+        border: none;
+
+        border-radius: 13px;
+
+        background: #242424;
+
+        color: white;
+
+        font-size: 14px;
+
+        font-weight: 700;
+
+        letter-spacing: 1px;
+
+        cursor: pointer;
+
+        transition:
+            transform 0.25s ease,
+            background 0.25s ease,
+            box-shadow 0.25s ease;
+    }
+
+    .login-button:hover {
+        background: #b08d4f;
+
+        transform: translateY(-2px);
+
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+
+
+    /* =========================
+       Seller Login
+    ========================= */
+
+    .seller-login {
+        display: block;
+
+        text-align: center;
+
+        margin-top: 22px;
+
+        color: #777 !important;
+
+        font-size: 13px;
+
+        font-weight: 500;
+
+        transition: color 0.2s ease;
+    }
+
+    .seller-login:hover {
+        color: #9a793e !important;
+    }
+
+
+    /* =========================
+       Mobile
+    ========================= */
+
+    @media (max-width: 900px) {
+
+        .login-container {
+            grid-template-columns: 1fr;
+
+            gap: 35px;
+
+            max-width: 520px;
+        }
+
+        .login-intro {
+            text-align: center;
+
+            padding: 0;
+        }
+
+        .login-intro h1 {
+            font-size: 52px;
+
+            letter-spacing: -2px;
+        }
+
+        .login-description {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .book-decoration {
+            margin: auto;
+        }
+    }
+
+    @media (max-width: 500px) {
+
+        .login-page {
+            padding: 45px 18px;
+        }
+
+        .login-intro h1 {
+            font-size: 42px;
+        }
+
+        .login-description {
+            font-size: 16px;
+        }
+
+        .login-card {
+            padding: 32px 24px;
+
+            border-radius: 20px;
+        }
+
+        .login-card-header h2 {
+            font-size: 28px;
+        }
+
+        .captcha-row {
+            flex-direction: column;
+
+            align-items: stretch;
+        }
+
+        #CaptchaDiv {
+            width: 100%;
+        }
+
+        #CaptchaInput {
+            width: 100%;
+
+            flex: none;
+        }
+    }
+
 </style>
-</head>
-<body onload="funload()">
-	<header>
-		<nav class="navbar navbar-expand-sm bg-dark">
-			<a class="navbar-brand"> <!-- The below line can be an image or a h1, either will work -->
-				<img src="logo.png" alt="Google logo" width="60" height="30px">
-			</a>
 
-			<button style="background-color: white;" class="navbar-toggler"
-				type="button" data-toggle="collapse" data-target="#navbarNav"
-				aria-controls="navbarNav" aria-expanded="false"
-				aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			</button>
+</head> <body>
+<header>
 
-			<div class="collapse navbar-collapse" id="navbarNav">
-				<ul class="navbar-nav">
-					<li class="nav-item"><span><a class="nav-link"
-							href="index.html">Home</a></span></li>
-					<li class="nav-item "><span><a class="nav-link active"
-							href="login.html">Login</a></span></li>
-					<li class="nav-item "><span><a class="nav-link"
-							href="CustomerRegister.html">Register</a></span></li>
-				</ul>
-			</div>
-		</nav>
-	</header>
+    <nav class="navbar navbar-expand-sm navbar-dark">
 
-	<div id="topmid">
-		<h1>Welcome to Online Book Store</h1>
-	</div>
+        <a class="navbar-brand" href="index.html">
+            <img src="logo.png"
+                alt="Online Book Store Logo">
+        </a>
 
-	<form action="userlog" method="post" onsubmit="checkform()"
-		id="theform">
-		<table class="tab" style="width: 40%">
-			<tr style="color: brown; padding-left: 35%">
-				<td>Customer LOGIN</td>
-			</tr>
-			<tr>
-				<td><a href="SellerLogin.html"
-					style="color: blue; font-size: medium;">Are you Seller?, Click
-						Here to Login as Admin</a></td>
-			</tr>
-			<tr>
-				<td><label for="userName">Username : </label> <input
-					type="text" name="username" id="userName"
-					placeholder="Enter your Username"><br /> <br /> <label
-					for="Password">Password : </label> <input type="password"
-					name="password" placeholder="Enter Password" id="Password"><br />
-					<br />
+        <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation">
 
-					<div class="capbox">
-						<div id="CaptchaDiv">46749</div>
-						<div class="capbox-inner">
-							<input type="hidden" id="txtCaptcha" value="46749"> <input
-								type="text" name="CaptchaInput" id="CaptchaInput" size="15"
-								placeholder="Enter Captcha"><br>
-						</div>
-					</div> <br />
-				<br /> <input class="btn btn-success" type="submit"
-					value=" Login as an User  "></td>
-			</tr>
-		</table>
-	</form>
+            <span class="navbar-toggler-icon"></span>
+
+        </button>
 
 
-	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-	<script
-		src="https://cdn.jsdelivr.net/npm/popper.js@1.14.6/dist/umd/popper.min.js"></script>
-	<script
-		src="https://cdn.jsdelivr.net/npm/bootstrap@4.2.1/dist/js/bootstrap.min.js"></script>
-	<script type="text/javascript">
+        <div class="collapse navbar-collapse" id="navbarNav">
+
+            <ul class="navbar-nav">
+
+                <li class="nav-item">
+                    <a class="nav-link"
+                        href="index.html">
+                        Home
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link active"
+                        href="CustomerLogin.html">
+                        Login
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link"
+                        href="CustomerRegister.html">
+                        Register
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+    </nav>
+
+</header>
 
 
-		// Preloder script
-		var tmp = document.getElementById("loding");
-		function funload() {
-		  loding.style.display = "none";
-		}
-	  
-  
+<main class="login-page">
 
-		// Captcha Script
+    <div class="login-container">
 
-		function checkform() {
-			var theform = document.getElementById("theform");
-			var why = "";
 
-			if (theform.CaptchaInput.value == "") {
-				why += "- Please Enter CAPTCHA Code.\n";
-			}
-			if (theform.CaptchaInput.value != "") {
-				if (ValidCaptcha(theform.CaptchaInput.value) == false) {
-					why += "- The CAPTCHA Code Does Not Match.\n";
-				}
-			}
-			if (why != "") {
-				alert(why);
-				event.preventDefault();
-				return false;
-			}
-			return true;
-		}
+        <!-- LEFT SIDE -->
 
-		var a = Math.ceil(Math.random() * 9) + '';
-		var b = Math.ceil(Math.random() * 9) + '';
-		var c = Math.ceil(Math.random() * 9) + '';
-		var d = Math.ceil(Math.random() * 9) + '';
-		var e = Math.ceil(Math.random() * 9) + '';
+        <section class="login-intro">
 
-		var code = a + b + c + d + e;
-		document.getElementById("txtCaptcha").value = code;
-		document.getElementById("CaptchaDiv").innerHTML = code;
+            <div class="login-eyebrow">
+                ONLINE BOOK STORE
+            </div>
 
-		// Validate input against the generated number
-		function ValidCaptcha() {
-			var str1 = removeSpaces(document.getElementById('txtCaptcha').value);
-			var str2 = removeSpaces(document.getElementById('CaptchaInput').value);
-			if (str1 == str2) {
-				return true;
-			} else {
-				return false;
-			}
-		}
+            <h1>
+                Welcome<br>
+                <span>back.</span>
+            </h1>
 
-		// Remove the spaces from the entered and generated code
-		function removeSpaces(string) {
-			return string.split(' ').join('');
-		}
-	</script>
-</body>
-</html>
+            <p class="login-description">
+                Your next great read is waiting.
+                Sign in to continue exploring books,
+                discovering new stories, and finding
+                something worth getting lost in.
+            </p>
+
+            <div class="book-decoration"></div>
+
+        </section>
+
+
+        <!-- LOGIN CARD -->
+
+        <section class="login-card">
+
+            <div class="login-card-header">
+
+                <h2>Sign in</h2>
+
+                <p>
+                    Enter your details to access your account.
+                </p>
+
+            </div>
+
+
+            <form action="userlog"
+                method="post"
+                onsubmit="return checkform()"
+                id="theform">
+
+
+                <div class="form-group-custom">
+
+                    <label for="userName">
+                        Username
+                    </label>
+
+                    <input
+                        type="text"
+                        name="username"
+                        id="userName"
+                        class="form-control-custom"
+                        placeholder="Enter your username"
+                        autocomplete="username">
+
+                </div>
+
+
+                <div class="form-group-custom">
+
+                    <label for="Password">
+                        Password
+                    </label>
+
+                    <input
+                        type="password"
+                        name="password"
+                        id="Password"
+                        class="form-control-custom"
+                        placeholder="Enter your password"
+                        autocomplete="current-password">
+
+                </div>
+
+
+                <div class="form-group-custom">
+
+                    <label class="captcha-label">
+                        Security check
+                    </label>
+
+                    <div class="captcha-row">
+
+                        <div id="CaptchaDiv">
+                            46749
+                        </div>
+
+                        <input
+                            type="hidden"
+                            id="txtCaptcha"
+                            value="46749">
+
+                        <input
+                            type="text"
+                            name="CaptchaInput"
+                            id="CaptchaInput"
+                            placeholder="Enter code"
+                            autocomplete="off">
+
+                    </div>
+
+                </div>
+
+
+                <input
+                    class="login-button"
+                    type="submit"
+                    value="SIGN IN">
+
+
+                <a
+                    href="SellerLogin.html"
+                    class="seller-login">
+                    Are you a seller? Sign in as admin →
+                </a>
+
+            </form>
+
+        </section>
+
+    </div>
+
+</main>
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+
+<script
+    
+src="https://cdn.jsdelivr.net/npm/popper.js@1.14.6/dist/umd/popper.min.js">
+</script>
+
+<script
+    
+src="https://cdn.jsdelivr.net/npm/bootstrap@4.2.1/dist/js/bootstrap.min.js">
+</script>
+
+
+<script>
+
+    function funload() {
+        var loading = document.getElementById("loding");
+
+        if (loading) {
+            loading.style.display = "none";
+        }
+    }
+
+
+    /* =========================
+       CAPTCHA
+    ========================= */
+
+    function checkform() {
+
+        var theform = document.getElementById("theform");
+
+        var why = "";
+
+
+        if (theform.CaptchaInput.value == "") {
+
+            why += "- Please Enter CAPTCHA Code.\n";
+
+        }
+
+
+        if (theform.CaptchaInput.value != "") {
+
+            if (ValidCaptcha() == false) {
+
+                why += "- The CAPTCHA Code Does Not Match.\n";
+
+            }
+
+        }
+
+
+        if (why != "") {
+
+            alert(why);
+
+            return false;
+
+        }
+
+        return true;
+    }
+
+
+    /* Generate CAPTCHA */
+
+    var a = Math.ceil(Math.random() * 9) + '';
+    var b = Math.ceil(Math.random() * 9) + '';
+    var c = Math.ceil(Math.random() * 9) + '';
+    var d = Math.ceil(Math.random() * 9) + '';
+    var e = Math.ceil(Math.random() * 9) + '';
+
+    var code = a + b + c + d + e;
+
+
+    document.getElementById("txtCaptcha").value = code;
+
+    document.getElementById("CaptchaDiv").innerHTML = code;
+
+
+    /* Validate CAPTCHA */
+
+    function ValidCaptcha() {
+
+        var str1 =
+            removeSpaces(
+                document.getElementById('txtCaptcha').value
+            );
+
+        var str2 =
+            removeSpaces(
+                document.getElementById('CaptchaInput').value
+            );
+
+        return str1 == str2;
+    }
+
+
+    function removeSpaces(string) {
+
+        return string.split(' ').join('');
+
+    }
+
+</script>
+
+</body> </html>

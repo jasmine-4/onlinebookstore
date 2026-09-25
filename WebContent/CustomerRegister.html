@@ -1,117 +1,766 @@
-<html>
-<head>
-<meta charset="ISO-8859-1">
-<title>Book Store</title>
+<!DOCTYPE html> <html lang="en"> <head>
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Register | Online Book Store</title>
+
 <link rel="apple-touch-icon" sizes="180x180"
-	href="./favicons/apple-touch-icon.png">
+    href="./favicons/apple-touch-icon.png">
+
 <link rel="icon" type="image/png" sizes="32x32"
-	href="./favicons/favicon-32x32.png">
+    href="./favicons/favicon-32x32.png">
+
 <link rel="icon" type="image/png" sizes="16x16"
-	href="./favicons/favicon-16x16.png">
+    href="./favicons/favicon-16x16.png">
+
 <link rel="manifest" href="./favicons/site.webmanifest">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" >
+
+<link rel="stylesheet"
+    
+href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css">
+
 <link rel="stylesheet" href="styles.css">
+
 <style>
-input {
-	padding: 2px 2px;
-	margin: 2px 0;
-	box-sizing: border-box;
-	border-radius:10px;
-}
+
+    /* =========================
+       Registration Page
+    ========================= */
+
+    .register-page {
+        min-height: calc(100vh - 74px);
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        padding: 55px 7%;
+    }
+
+    .register-container {
+        width: min(1100px, 100%);
+
+        display: grid;
+
+        grid-template-columns: 0.8fr 1.2fr;
+
+        align-items: center;
+
+        gap: 75px;
+    }
+
+    /* =========================
+       Left Introduction
+    ========================= */
+
+    .register-intro {
+        color: white;
+
+        padding: 20px;
+    }
+
+    .register-eyebrow {
+        display: inline-block;
+
+        font-size: 12px;
+
+        font-weight: 700;
+
+        letter-spacing: 4px;
+
+        color: rgba(255, 255, 255, 0.85);
+
+        margin-bottom: 20px;
+    }
+
+    .register-intro h1 {
+        font-size: clamp(45px, 5.5vw, 70px);
+
+        line-height: 1.02;
+
+        font-weight: 800;
+
+        letter-spacing: -3px;
+
+        margin-bottom: 25px;
+
+        text-shadow:
+            0 4px 18px rgba(0, 0, 0, 0.5),
+            0 10px 35px rgba(0, 0, 0, 0.35);
+    }
+
+    .register-intro h1 span {
+        color: #f6d58a;
+    }
+
+    .register-description {
+        max-width: 410px;
+
+        font-size: 17px;
+
+        line-height: 1.7;
+
+        color: rgba(255, 255, 255, 0.88);
+
+        margin-bottom: 30px;
+    }
+
+    .book-decoration {
+        width: 70px;
+
+        height: 4px;
+
+        background: #f6d58a;
+
+        border-radius: 20px;
+
+        box-shadow:
+            0 3px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    /* =========================
+       Registration Card
+    ========================= */
+
+    .register-card {
+        width: 100%;
+
+        padding: 38px 40px;
+
+        background: rgba(255, 255, 255, 0.95);
+
+        border: 1px solid rgba(255, 255, 255, 0.7);
+
+        border-radius: 26px;
+
+        box-shadow:
+            0 25px 70px rgba(0, 0, 0, 0.38),
+            0 5px 20px rgba(0, 0, 0, 0.15);
+
+        color: #222;
+    }
+
+    .register-header {
+        margin-bottom: 27px;
+    }
+
+    .register-header h2 {
+        font-size: 30px;
+
+        font-weight: 750;
+
+        color: #171717;
+
+        margin-bottom: 7px;
+    }
+
+    .register-header p {
+        color: #777;
+
+        font-size: 14px;
+
+        margin: 0;
+    }
+
+    /* =========================
+       Form Layout
+    ========================= */
+
+    .register-form {
+        width: 100%;
+    }
+
+    .form-row-custom {
+        display: grid;
+
+        grid-template-columns: 1fr 1fr;
+
+        gap: 16px;
+    }
+
+    .form-group-custom {
+        margin-bottom: 17px;
+    }
+
+    .form-group-custom label {
+        display: block;
+
+        font-size: 12px;
+
+        font-weight: 700;
+
+        color: #333;
+
+        margin-bottom: 7px;
+    }
+
+    .form-control-custom {
+        width: 100%;
+
+        height: 47px;
+
+        padding: 0 14px;
+
+        border: 1px solid #dddddd;
+
+        border-radius: 11px;
+
+        background: #f8f8f8;
+
+        color: #222;
+
+        font-size: 14px;
+
+        outline: none;
+
+        transition:
+            border-color 0.25s ease,
+            box-shadow 0.25s ease,
+            background 0.25s ease;
+    }
+
+    .form-control-custom:focus {
+        background: #ffffff;
+
+        border-color: #b89b5e;
+
+        box-shadow:
+            0 0 0 3px rgba(184, 155, 94, 0.14);
+    }
+
+    /* =========================
+       Address
+    ========================= */
+
+    .address-input {
+        width: 100%;
+
+        min-height: 82px;
+
+        padding: 12px 14px;
+
+        resize: vertical;
+
+        border: 1px solid #dddddd;
+
+        border-radius: 11px;
+
+        background: #f8f8f8;
+
+        color: #222;
+
+        font-family: inherit;
+
+        font-size: 14px;
+
+        outline: none;
+
+        transition:
+            border-color 0.25s ease,
+            box-shadow 0.25s ease,
+            background 0.25s ease;
+    }
+
+    .address-input:focus {
+        background: #ffffff;
+
+        border-color: #b89b5e;
+
+        box-shadow:
+            0 0 0 3px rgba(184, 155, 94, 0.14);
+    }
+
+    /* =========================
+       Terms
+    ========================= */
+
+    .terms {
+        display: flex;
+
+        align-items: flex-start;
+
+        gap: 10px;
+
+        margin: 7px 0 20px;
+    }
+
+    .terms input {
+        width: 16px;
+
+        height: 16px;
+
+        margin-top: 2px;
+
+        accent-color: #242424;
+
+        flex-shrink: 0;
+    }
+
+    .terms label {
+        font-size: 12px;
+
+        line-height: 1.5;
+
+        color: #777;
+
+        margin: 0;
+
+        cursor: pointer;
+    }
+
+    /* =========================
+       Register Button
+    ========================= */
+
+    .register-button {
+        width: 100%;
+
+        height: 51px;
+
+        border: none;
+
+        border-radius: 13px;
+
+        background: #242424;
+
+        color: white;
+
+        font-size: 13px;
+
+        font-weight: 700;
+
+        letter-spacing: 1.2px;
+
+        cursor: pointer;
+
+        transition:
+            transform 0.25s ease,
+            background 0.25s ease,
+            box-shadow 0.25s ease;
+    }
+
+    .register-button:hover {
+        background: #b08d4f;
+
+        transform: translateY(-2px);
+
+        box-shadow:
+            0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    /* =========================
+       Bottom Login Link
+    ========================= */
+
+    .login-link {
+        display: block;
+
+        text-align: center;
+
+        margin-top: 18px;
+
+        color: #777 !important;
+
+        font-size: 12px;
+
+        font-weight: 500;
+
+        transition: color 0.2s ease;
+    }
+
+    .login-link:hover {
+        color: #9a793e !important;
+    }
+
+    /* =========================
+       Mobile
+    ========================= */
+
+    @media (max-width: 900px) {
+
+        .register-container {
+            grid-template-columns: 1fr;
+
+            gap: 30px;
+
+            max-width: 600px;
+        }
+
+        .register-intro {
+            text-align: center;
+
+            padding: 0;
+        }
+
+        .register-intro h1 {
+            font-size: 52px;
+
+            letter-spacing: -2px;
+        }
+
+        .register-description {
+            margin-left: auto;
+
+            margin-right: auto;
+        }
+
+        .book-decoration {
+            margin: auto;
+        }
+
+    }
+
+    @media (max-width: 600px) {
+
+        .register-page {
+            padding: 40px 18px;
+        }
+
+        .register-intro h1 {
+            font-size: 42px;
+        }
+
+        .register-description {
+            font-size: 16px;
+        }
+
+        .register-card {
+            padding: 30px 23px;
+
+            border-radius: 20px;
+        }
+
+        .form-row-custom {
+            grid-template-columns: 1fr;
+
+            gap: 0;
+        }
+
+    }
 
 </style>
-</head>
-<body onload="funload()">
-	<header>
-		<nav class="navbar navbar-expand-sm bg-dark">
-				<a class="navbar-brand">
-					<!-- The below line can be an image or a h1, either will work -->
-					<img src="logo.png" alt="Google logo" width="60" height="30px">
-				</a>
-				
-				<button style="background-color:white;" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-				    <span class="navbar-toggler-icon"></span>
-				 </button>
 
-                <div class="collapse navbar-collapse" id="navbarNav">                
-				<ul class="navbar-nav" >
-					<li class="nav-item"><span><a class="nav-link" href="index.html">Home</a></span></li>
-					<li class="nav-item "><span><a class="nav-link" href="login.html">Login</a></span></li>
-					<li class="nav-item "><span><a class="nav-link active" href="CustomerRegister.html">Register</a></span></li>
-				</ul>
-				</div>
-			</nav>
-	</header>
-	<br/>
-	
-	<form action="userreg" method="post">
-		<table class="tab" style="width:40%">
+</head> <body onload="funload()">
+<!-- =========================
+     Navigation
+========================== -->
 
-			<tr style="background-color: white; color: green; border-radius: 25%">
-				<td>Enter the Registration Details</td>
-			</tr>
-			<tr>
-				<td>
-				<!-- <label for="username">Username : </label> 
-				<input
-					type="text" name="username" id="userName"
-					placeholder="Enter your Username" required>
-				<br/> -->
-				<label for="Email" style="margin-right: 5%"> Email Id : </label> 
-					<input type="text" name="mailid" id="Email"
-					placeholder="Enter your Email">
-				<br>
-				<label for="passWord">Password :&nbsp; </label> 
-				<input
-					type="password" name="password" id="passWord"
-					placeholder="Enter Password" required>
-				<br>
-				<label for="firstName">First Name : </label> 
-				<input
-					type="text" name="firstname" id="firstName"
-					placeholder="Enter your First Name" required>
-				<br>
-				<label for="lastName">Last Name : </label> 
-				<input
-					type="text" name="lastname" id="lastName"
-					placeholder="Enter your Last Name" required>
-				<br>
-				<label for="address">Address: </label>
-				<textarea name="address" id="address"
-						placeholder="Enter your Address" required> </textarea>
-				<br>
-				<label for="phno">Mobile No : </label> 
-				<input type="text"
-					name="phone" id="phno" placeholder="Enter your Phone Number"
-					required>
-				<br>
-				<input type="checkbox"
-					name="acceptance" /> 
-				<label
-					for="checkbox" for="acceptance"
-					style="font-size: small; color: blue">I
-						ACCEPT ALL TERMS &amp; CONDITIONS</label>
-				<br>
-				<input style="text-align:center;" class="btn btn-success" type="submit" value="REGISTER ME ">
-				</td>
-			</tr>
-	
-		</table>
-	</form>
+<header>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" ></script>
-	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.6/dist/umd/popper.min.js" ></script>
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.2.1/dist/js/bootstrap.min.js"></script>
-	<script>
-		// Preloder script
-		var tmp = document.getElementById("loding");
-		function funload() {
-			loding.style.display = "none";
-		}
-	</script>
+    <nav class="navbar navbar-expand-sm navbar-dark">
 
+        <a class="navbar-brand" href="index.html">
 
+            <img
+                src="logo.png"
+                alt="Online Book Store Logo">
 
-</body>
+        </a>
 
-</html>
+        <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation">
+
+            <span class="navbar-toggler-icon"></span>
+
+        </button>
+
+        <div
+            class="collapse navbar-collapse"
+            id="navbarNav">
+
+            <ul class="navbar-nav">
+
+                <li class="nav-item">
+
+                    <a
+                        class="nav-link"
+                        href="index.html">
+
+                        Home
+
+                    </a>
+
+                </li>
+
+                <li class="nav-item">
+
+                    <a
+                        class="nav-link"
+                        href="CustomerLogin.html">
+
+                        Login
+
+                    </a>
+
+                </li>
+
+                <li class="nav-item">
+
+                    <a
+                        class="nav-link active"
+                        href="CustomerRegister.html">
+
+                        Register
+
+                    </a>
+
+                </li>
+
+            </ul>
+
+        </div>
+
+    </nav>
+
+</header>
+
+<!-- =========================
+     Registration
+========================== -->
+
+<main class="register-page">
+
+    <div class="register-container">
+
+        <!-- LEFT SIDE -->
+
+        <section class="register-intro">
+
+            <div class="register-eyebrow">
+                ONLINE BOOK STORE
+            </div>
+
+            <h1>
+                Start your<br>
+                <span>story.</span>
+            </h1>
+
+            <p class="register-description">
+
+                Create your account and step into
+                a world of stories, ideas, adventures,
+                and unforgettable characters.
+
+            </p>
+
+            <div class="book-decoration"></div>
+
+        </section>
+
+        <!-- REGISTRATION CARD -->
+
+        <section class="register-card">
+
+            <div class="register-header">
+
+                <h2>Create account</h2>
+
+                <p>
+                    Fill in your details to get started.
+                </p>
+
+            </div>
+
+            <form
+                action="userreg"
+                method="post"
+                class="register-form">
+
+                <!-- Email + Password -->
+
+                <div class="form-row-custom">
+
+                    <div class="form-group-custom">
+
+                        <label for="Email">
+                            Email address
+                        </label>
+
+                        <input
+                            type="email"
+                            name="mailid"
+                            id="Email"
+                            class="form-control-custom"
+                            placeholder="you@example.com"
+                            required>
+
+                    </div>
+
+                    <div class="form-group-custom">
+
+                        <label for="passWord">
+                            Password
+                        </label>
+
+                        <input
+                            type="password"
+                            name="password"
+                            id="passWord"
+                            class="form-control-custom"
+                            placeholder="Create a password"
+                            required>
+
+                    </div>
+
+                </div>
+
+                <!-- First + Last Name -->
+
+                <div class="form-row-custom">
+
+                    <div class="form-group-custom">
+
+                        <label for="firstName">
+                            First name
+                        </label>
+
+                        <input
+                            type="text"
+                            name="firstname"
+                            id="firstName"
+                            class="form-control-custom"
+                            placeholder="First name"
+                            required>
+
+                    </div>
+
+                    <div class="form-group-custom">
+
+                        <label for="lastName">
+                            Last name
+                        </label>
+
+                        <input
+                            type="text"
+                            name="lastname"
+                            id="lastName"
+                            class="form-control-custom"
+                            placeholder="Last name"
+                            required>
+
+                    </div>
+
+                </div>
+
+                <!-- Address -->
+
+                <div class="form-group-custom">
+
+                    <label for="address">
+                        Address
+                    </label>
+
+                    <textarea
+                        name="address"
+                        id="address"
+                        class="address-input"
+                        placeholder="Enter your address"
+                        required></textarea>
+
+                </div>
+
+                <!-- Phone -->
+
+                <div class="form-group-custom">
+
+                    <label for="phno">
+                        Mobile number
+                    </label>
+
+                    <input
+                        type="tel"
+                        name="phone"
+                        id="phno"
+                        class="form-control-custom"
+                        placeholder="Enter your phone number"
+                        required>
+
+                </div>
+
+                <!-- Terms -->
+
+                <div class="terms">
+
+                    <input
+                        type="checkbox"
+                        name="acceptance"
+                        id="acceptance"
+                        required>
+
+                    <label for="acceptance">
+
+                        I accept the Terms &amp; Conditions
+                        and acknowledge the bookstore's
+                        policies.
+
+                    </label>
+
+                </div>
+
+                <!-- Register -->
+
+                <input
+                    class="register-button"
+                    type="submit"
+                    value="CREATE MY ACCOUNT">
+
+                <!-- Login -->
+
+                <a
+                    href="CustomerLogin.html"
+                    class="login-link">
+
+                    Already have an account?
+                    Sign in →
+
+                </a>
+
+            </form>
+
+        </section>
+
+    </div>
+
+</main>
+
+<!-- =========================
+     Scripts
+========================== -->
+
+<script
+    src="https://code.jquery.com/jquery-3.3.1.slim.min.js">
+</script>
+
+<script
+    
+src="https://cdn.jsdelivr.net/npm/popper.js@1.14.6/dist/umd/popper.min.js">
+</script>
+
+<script
+    
+src="https://cdn.jsdelivr.net/npm/bootstrap@4.2.1/dist/js/bootstrap.min.js">
+</script>
+
+<script>
+
+    function funload() {
+
+        var loading =
+            document.getElementById("loding");
+
+        if (loading) {
+            loading.style.display = "none";
+        }
+
+    }
+
+</script>
+
+</body> </html>

@@ -1,11 +1,9 @@
 📚 Online Bookstore
-
 A full-stack Java web application for managing an online bookstore, including user registration, authentication, book browsing, shopping cart management, purchasing, payment receipts, and an administrative dashboard for inventory management.
 
 Java Web Development Project — built with Java Servlets, JDBC, MySQL, HTML, CSS, JavaScript, and Bootstrap.
 
 🚀 Project Overview
-
 The Online Bookstore is a web-based e-commerce application designed to provide a simple and user-friendly platform for purchasing books online.
 
 The application supports two types of users:
@@ -17,56 +15,36 @@ Administrators — manage books, inventory, pricing, and sales information.
 The project demonstrates practical implementation of Java Servlets, JDBC, MVC-style web application development, database connectivity, session management, and CRUD operations.
 
 ✨ Key Features
-
 👤 Customer Features
-
-User registration and login
-
-Browse available books
-
-View book details and prices
-
-Select books and quantities
-
-Add books to the shopping cart
-
-Purchase books
-
-Generate payment receipts
-
-View purchase-related information
-
-
+  1. User registration and login
+  2. Browse available books
+  3. View book details and prices
+  4. Select books and quantities
+  5. Add books to the shopping cart
+  6. Purchase books
+  7. Generate payment receipts
+  8. View purchase-related information
 
 🔐 Administrator Features
-
-Secure administrator login
-
-Add new books
-
-View available books
-
-Remove books
-
-Increase or decrease inventory
-
-Update book prices
-
-Manage book availability
-
-Maintain selling history
+  1. Secure administrator login
+  2. Add new books
+  3. View available books
+  4. Remove books
+  5. Increase or decrease inventory
+  6. Update book prices
+  7. Manage book availability
+  8. Maintain selling history
 
 🛠️ Technology Stack
-Layer	Technologies
-Frontend	HTML, CSS, JavaScript, Bootstrap
-Backend	Java, Java Servlets, JDBC
-Database	MySQL
-Build Tool	Apache Maven
-Application Server	Apache Tomcat
-IDE	Eclipse Enterprise Edition
-Version Control	Git & GitHub
-🏗️ Application Architecture
+Frontend    ->	  HTML, CSS, JavaScript, Bootstrap
+Backend	    ->   Java, Java Servlets, JDBC
+Database	  ->   MySQL
+Build Tool	-> Apache Maven
+Application -> Apache Tomcat
+IDE        	-> Eclipse Enterprise Edition
+Version     ->  Control	Git & GitHub
 
+🏗️ Application Architecture
 The application follows a layered web-application approach:
 
 User
@@ -84,238 +62,111 @@ JDBC
 MySQL Database
 
 Main Components
-
-Presentation Layer — HTML, CSS, JavaScript, and Bootstrap
-
-Controller Layer — Java Servlets handling HTTP requests
-
-Data Access Layer — JDBC for database operations
-
-Database Layer — MySQL for users, books, inventory, and related data
+  1. Presentation Layer — HTML, CSS, JavaScript, and Bootstrap
+  2. Controller Layer — Java Servlets handling HTTP requests
+  3.Data Access Layer — JDBC for database operations
+  4. Database Layer — MySQL for users, books, inventory, and related data
 
 🗄️ Database
-
 The application uses MySQL with tables for:
-
-Users
-
-Books
-
-Inventory
-
-User roles
+  Users
+  Books
+  Inventory
+  User roles
 
 Example book data includes:
 
-Book barcode/ISBN
+  Book barcode/ISBN
+  Book name
+  Author
+  Price
+  Available quantity
 
-Book name
+  📸 Screenshots
+  git clone https://github.com/jasmine-4/onlinebookstore.git
 
-Author
-
-Price
-
-Available quantity
-
-📸 Screenshots
-Online Bookstore
-
-Book Management
-
-<!-- Add additional screenshots here as your updated UI screenshots become available. -->
 ⚙️ Running the Project Locally
 Prerequisites
-
 Install the following:
 
-Java JDK 8 or higher
-
-Eclipse Enterprise Edition
-
-Apache Maven
-
-Apache Tomcat 8.0+
-
-MySQL Server
-
-MySQL Workbench (optional)
-
-Git
+ - Java JDK 8 or higher
+ - Eclipse Enterprise Editior
+ - Apache Maven 
+ - Apache Tomcat 8.0+
+ - MySQL Server
+ - MySQL Workbench (optional)
+ - Git
 
 1. Clone the Repository
-git clone https://github.com/jasmine-4/onlinebookstore.git
-cd onlinebookstore
+  git clone https://github.com/jasmine-4/onlinebookstore.git
+  cd onlinebookstore
 
 2. Configure the Database
+   - Create a MySQL database named onlinebookstore and execute the SQL initialization script provided in this repository.
 
-Create the database:
-
-CREATE DATABASE onlinebookstore;
-USE onlinebookstore;
-
-
-Create the required tables and insert the sample data using the SQL script provided in the project.
+  2. Create the required tables and insert the sample data using the SQL script provided in the project.
 
 3. Configure Database Connection
+    Open: src/main/resources/application.properties
+    Update the database username, password, host, and other connection settings according to your local MySQL configuration.
+    Note: Do not commit real database passwords or other sensitive credentials to GitHub.
 
-Open:
+5. Build the Project
+   - Run: mvn clean install
 
-src/main/resources/application.properties
-
-
-Update the database configuration with your local MySQL credentials.
-
-Example:
-
-db.username=YOUR_USERNAME
-db.password=YOUR_PASSWORD
-
-
-Do not commit real database passwords or other credentials to GitHub.
-
-4. Build the Project
-
-Run:
-
-mvn clean install
-
-5. Deploy to Tomcat
-
-Deploy the generated application to Apache Tomcat and start the server.
-
-The application can then be accessed locally at:
-
-http://localhost:8083/onlinebookstore/
-
-
-The port may differ depending on your local Tomcat configuration.
+5. Run with Apache Tomcat
+    Deploy the application to Apache Tomcat and start the server.
+    Once Tomcat is running, open:
+    http://localhost:8083/onlinebookstore/
 
 🔑 Demo Accounts
-
-For local/demo purposes, sample accounts can be created using the database initialization script.
+For testing the application locally, you can use the sample accounts provided in the database initialization script.
 
 Customer
-
-Username: jasmine
-Password: jasmine
-
+  Username: jasmine
+  Password: jasmine
 
 Administrator
+  Username: Admin
+  Password: Admin
 
-Username: Admin
-Password: Admin
-
-
-These credentials are intended only for the sample project. For a production application, passwords should never be stored or shared in plain text.
-
-📂 Project Structure
-onlinebookstore/
-│
-├── src/
-│   └── main/
-│       ├── java/
-│       │   └── ...
-│       └── resources/
-│           └── application.properties
-│
-├── WebContent/
-│   ├── bookstore.jpeg
-│   ├── books.jpg
-│   └── ...
-│
-├── pom.xml
-└── README.md
+These credentials are for local/demo purposes only. Use secure, hashed passwords in a production application.
 
 🔒 Security Note
-
 This project was developed as a learning/mini-project and does not implement all security practices required for production applications.
 
 Potential production improvements include:
-
-Password hashing
-
-Secure session management
-
-Input validation
-
-CSRF protection
-
-Authentication/authorization improvements
-
-Secure database configuration
-
-HTTPS
-
-Environment-based secrets management
-
-🔮 Future Improvements
-
-Potential enhancements include:
-
-Online payment gateway integration
-
-Book search and filtering
-
-Book categories
-
-User order history
-
-Wishlist functionality
-
-Email notifications
-
-Password reset functionality
-
-REST API integration
-
-Improved authentication and authorization
-
-Responsive UI improvements
-
-Automated testing
-
-Docker-based deployment
-
-Cloud deployment
+  
+  Password hashing
+  Secure session management
+  Input validation
+  CSRF protection
+  Authentication/authorization improvements  
+  Secure database configuration
+  HTTPS  
+  Environment-based secrets management
 
 🎯 Skills Demonstrated
-
 This project demonstrates practical experience with:
 
-Java web development
-
-Java Servlets
-
-JDBC
-
-MySQL database design
-
-CRUD operations
-
-HTTP request/response handling
-
-User authentication
-
-Session management
-
-Role-based application functionality
-
-MVC-style application development
-
-HTML/CSS/JavaScript
-
-Bootstrap
-
-Maven
-
-Apache Tomcat
-
-Git/GitHub
+  - Java web development
+  - Java Servlets
+  - JDBC
+  - MySQL database design
+  - CRUD operations
+  - HTTP request/response handling
+  - User authentication
+  - Session management
+  - Role-based application functionality
+  - MVC-style application development
+  - HTML/CSS/JavaScript
+  - Bootstrap
+  - Maven
+  - Apache Tomcat
+  - Git/GitHub
 
 👩‍💻 Author
-
-Jasmine Mohal
+Jasmine Kaur Mohal
 
 Java Developer | Web Development | Backend Development
 
-⭐ If you found this project useful, feel free to explore the repository and provide feedback.

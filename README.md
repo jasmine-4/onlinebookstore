@@ -83,7 +83,8 @@ Example book data includes:
   Available quantity
 
   📸 Screenshots
-  git clone https://github.com/jasmine-4/onlinebookstore.git
+  <img width="1440" height="778" alt="image" src="https://github.com/user-attachments/assets/7f620b02-7037-4b1e-90dc-a7ac0baa6915" />
+
 
 ⚙️ Running the Project Locally
 Prerequisites

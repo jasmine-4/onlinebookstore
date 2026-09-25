@@ -83,9 +83,7 @@ Example book data includes:
   Available quantity
 
   📸 Screenshots
-  file:///Users/jasmine/onlinebookstore/WebContent/index.html
-  file:///Users/jasmine/onlinebookstore/WebContent/CustomerLogin.html
-  file:///Users/jasmine/onlinebookstore/WebContent/CustomerRegister.html
+  ![Online Book Store](WebContent/bookstore.jpeg)
   
 ⚙️ Running the Project Locally
 Prerequisites

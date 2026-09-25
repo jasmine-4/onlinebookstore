@@ -83,7 +83,8 @@ Example book data includes:
   Available quantity
 
   📸 Screenshots
-  ![Online Book Store](WebContent/bookstore.jpeg)
+  <img width="1440" height="778" alt="image" src="https://github.com/user-attachments/assets/2cd5474d-7093-4c0c-b677-2a18f2021e6f" />
+
   
 ⚙️ Running the Project Locally
 Prerequisites

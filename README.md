@@ -83,9 +83,10 @@ Example book data includes:
   Available quantity
 
   📸 Screenshots
-  <img width="1440" height="778" alt="image" src="https://github.com/user-attachments/assets/7f620b02-7037-4b1e-90dc-a7ac0baa6915" />
-
-
+  file:///Users/jasmine/onlinebookstore/WebContent/index.html
+  file:///Users/jasmine/onlinebookstore/WebContent/CustomerLogin.html
+  file:///Users/jasmine/onlinebookstore/WebContent/CustomerRegister.html
+  
 ⚙️ Running the Project Locally
 Prerequisites
 Install the following:

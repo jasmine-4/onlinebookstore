@@ -43,6 +43,6 @@ insert into users values('demo','demo','Demo','User','Demo Home','42502216225','
 
 insert into users values('Admin','Admin','Mr.','Admin','Haldia WB','9584552224521','admin@gmail.com',1);
 
-insert into users values('jasmine','jasmine','Jasmine','Raj','Bihar','1236547089','jasmine@gmail.com',2);
+insert into users values('jasmine','jasmine','Jasmine','Raj','Bihar','1236547089','jasmine.mohal12@gmail.com',2);
 
 commit;
